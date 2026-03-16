@@ -7,10 +7,17 @@
 \usepackage{blindtext}
 \usepackage{xcolor}
 \usepackage{adjustbox}
-
 \definecolor{colorAg}{RGB}{102, 102, 102}
 \definecolor{colorCo}{RGB}{220, 80, 100}
+
 \usetheme{Basic}
+
 \colorlet{backgroundcolor}{red!20!white}
 \tikzposterlatexaffectionproofoff
-\geometry{top=0.5cm, bottom=1cm, left=1cm, right=1cm}
+
+\usetitlestyle{Empty}
+
+\makeatletter
+\setlength{\TP@titletotopverticalspace}{0mm}      % espace au-dessus du titre
+\setlength{\TP@titletoblockverticalspace}{6mm}    % espace entre titre et contenu
+\makeatother
