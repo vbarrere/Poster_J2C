@@ -1,17 +1,31 @@
 \block{Neural network} {
     \begin{minipage}{0.45\textwidth}
-        \blindtext
-        \begin{equation}
-            \eta = 2\left| \frac{n^{out}_{Ag}}{n^{out}_{Ag} + n^{out}_{Co}} - \frac{n_{Ag}}{n_{tot}}\right| + 2\left| \frac{n^{in}_{Ag}}{n^{in}_{Ag} + n^{in}_{Co}} - \frac{n_{Ag}}{n_{tot}}\right| - \frac{d_{com}}{2r_{g}}
-        \end{equation}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.45\textwidth}
         \centering
-        \adjustbox{valign=c}{\includegraphics[width=0.6\linewidth]{Figure/deep_learning.png}}
+        \adjustbox{valign=c}{\includegraphics[width=0.7\linewidth]{Figure/deep_learning.png}}
         
         \vspace{0.5cm}
         
         \small{CNN architecture for image classification and regression}
+    \end{minipage}
+    %\hspace{0cm}
+    \begin{minipage}{0.45\textwidth}
+        \begin{itemize}
+            \item \textbf{Input:} HRTEM images of nanoalloys ;
+            
+            \vspace{0.5cm}
+
+            \item \textbf{Number of convolution layers:} 4 (32 filters of size 3x3) ;
+
+            \vspace{0.5cm}
+
+            \item \textbf{Number of dense layers:} 3 ; 
+
+            \vspace{0.5cm}
+
+            \item \textbf{Output:} prediction of the chemical composition and the segregation parameter
+        \end{itemize}
+        \begin{equation}
+            \eta = 2\left| \frac{n^{out}_{Ag}}{n^{out}_{Ag} + n^{out}_{Co}} - \frac{n_{Ag}}{n_{tot}}\right| + 2\left| \frac{n^{in}_{Ag}}{n^{in}_{Ag} + n^{in}_{Co}} - \frac{n_{Ag}}{n_{tot}}\right| - \frac{d_{com}}{2r_{g}}
+        \end{equation}
     \end{minipage}
 }
