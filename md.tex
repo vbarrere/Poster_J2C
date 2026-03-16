@@ -1,0 +1,68 @@
+\block{Molecular dynamic (MD) simulation} {
+        
+    \vspace{0.5cm}
+
+    \begin{itemize}
+        
+        \item \textbf{Number of atoms:} between 10 and 5000 atoms ;
+    
+        \vspace{0.5cm}
+    
+        \item \textbf{Simulation time:} between 0.5 ns and 5 ns ;
+            
+        \vspace{0.5cm}
+    
+        \item \textbf{Composition:} between 0\% and 100\% of \textcolor{colorAg}{\textbf{Ag}} atoms (the rest being \textcolor{colorCo}{\textbf{Co}} atoms) ;
+
+        \vspace{0.5cm}
+
+        \item \textbf{Initial temperature:} between 1500 K and 2500 K ;
+
+        \vspace{0.5cm}
+
+        \item \textbf{Final temperature:} 300 K ;
+
+        \vspace{0.5cm}
+
+        \item \textbf{Canonical ensemble:} Nosé-Hoover thermostat + linear decrease of the temperature            
+                
+        \vspace{1cm}
+            
+        \begin{equation}
+            T(t) = \frac{T_{\text{final} - T_\text{initial}}}{t_{\text{final}}}t + T_\text{initial}
+        \end{equation}            
+
+        \vspace{1.5cm}
+
+        \item \textbf{Interatomic potential:} TBSMA (Tight-Binding Second Moment Approximation)~[1] 
+                
+        \vspace{1cm}
+            
+        \begin{equation}
+            \mathcal{U} = \sum^N_{i=1} \left[\sum_{j\ne i}^NAe^{-p(r_{ij}/r_0 - 1)} -\sqrt{\sum_{j\ne i}^N\xi^2e^{-2q(r_{ij}/r_0 - 1)}}~\right]
+        \end{equation}
+    \end{itemize}
+        
+    \vspace{2.5cm}
+        
+    \begin{center}
+        \begin{tikzpicture}
+            % Image 1 (nœud "image1")
+            \node[anchor=west, inner sep=0] (image1) at (0,0) {
+                \includegraphics[width=0.25\linewidth]{Figure/MD/md_init.png}
+            };
+
+            % Image 2 (nœud "image2") à droite de l'image 1
+            \node[anchor=west, inner sep=0, xshift=0.5\linewidth] (image2) at (0,0) {
+                \includegraphics[width=0.15\linewidth]{Figure/MD/md_final.png}
+            };
+
+            % Légendes sous les images (optionnel)
+            \node[anchor=north, align=center] at (image1.south) {\small{Initial configuration}};
+            \node[anchor=north, align=center] at (image2.south) {\small{Final configuration}};
+
+            % Flèche entre les deux images
+            \draw[->, thick] (image1.east) -- (image2.west);
+        \end{tikzpicture}
+    \end{center}
+}
