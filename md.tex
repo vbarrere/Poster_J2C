@@ -26,35 +26,35 @@
 
         \item \textbf{Canonical ensemble:} Nosé-Hoover thermostat + linear decrease of the temperature            
                 
-        \vspace{1cm}
+        \vspace{0.5cm}
             
         \begin{equation}
             T(t) = \frac{T_{\text{final} - T_\text{initial}}}{t_{\text{final}}}t + T_\text{initial}
         \end{equation}            
 
-        \vspace{1.5cm}
+        \vspace{1cm}
 
         \item \textbf{Interatomic potential:} TBSMA (Tight-Binding Second Moment Approximation)~[1] 
                 
-        \vspace{1cm}
+        \vspace{0.5cm}
             
         \begin{equation}
             \mathcal{U} = \sum^N_{i=1} \left[\sum_{j\ne i}^NAe^{-p(r_{ij}/r_0 - 1)} -\sqrt{\sum_{j\ne i}^N\xi^2e^{-2q(r_{ij}/r_0 - 1)}}~\right]
         \end{equation}
     \end{itemize}
         
-    \vspace{2.5cm}
+    \vspace{1.5cm}
         
     \begin{center}
         \begin{tikzpicture}
             % Image 1 (nœud "image1")
             \node[anchor=west, inner sep=0] (image1) at (0,0) {
-                \includegraphics[width=0.25\linewidth]{Figure/MD/md_init.png}
+                \includegraphics[width=0.1\linewidth]{Figure/MD/md_init.png}
             };
 
             % Image 2 (nœud "image2") à droite de l'image 1
-            \node[anchor=west, inner sep=0, xshift=0.5\linewidth] (image2) at (0,0) {
-                \includegraphics[width=0.15\linewidth]{Figure/MD/md_final.png}
+            \node[anchor=west, inner sep=0, xshift=0.2\linewidth] (image2) at (0,0) {
+               \includegraphics[width=0.09\linewidth]{Figure/MD/md_final.png}
             };
 
             % Légendes sous les images (optionnel)
