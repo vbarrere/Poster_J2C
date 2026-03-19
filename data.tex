@@ -1,26 +1,20 @@
 \block{3. Creation of the dataset} {
-        
+
+    The final snapshots of the MD simulations are extracted, analyzed in terms of structure, and used to generate \textbf{synthetic HRTEM images}.
+
+    \vspace{0.3cm}
+
     \begin{minipage}[t]{0.48\linewidth}
 
-        \vspace{0.5cm}
+        \vspace{0.3cm}
 
         \textbf{\underline{Nanoalloys dataset}}
 
-        \vspace{0.5cm}
+        \vspace{0.3cm}
 
-        The final snapshots of the MD simulations are extracted, analyzed in terms of structure, and used to generate synthetic HRTEM images.
-        
-        \vspace{0.25cm}
+        \textbf{48\,000} simulated nanoalloy particles with large diversity thanks to randomized MD parameters.
 
-        \begin{itemize}
-            \item \textbf{Number of data:} 48000 simulated nanoalloy particles ;
-            
-            \vspace{0.25cm}
-            
-            \item \textbf{Large diversity of data} thanks to the random parameters of the MD simulations.
-        \end{itemize}
-
-        \vspace{1.2cm}
+        \vspace{0.8cm}
 
         \begin{center}
             \begin{tikzpicture}
@@ -39,20 +33,20 @@
                 \node[anchor=west, inner sep=0, xshift=0.45\linewidth] (image4) at (0,0) {
                     \includegraphics[width=0.11\linewidth]{Figure/particle_exemple4.png}
                 };
-            
+
                 \node[anchor=north, align=center, yshift=-0.025\linewidth] at (current bounding box.south) {\small{Examples of the dataset}};
             \end{tikzpicture}
         \end{center}
 
-        \vspace{1.2cm}
+        \vspace{0.8cm}
 
         \textbf{\underline{HRTEM images dataset}}
 
-        \vspace{0.5cm}
+        \vspace{0.3cm}
 
-        The \textbf{dataset of HRTEM images} is generated using \textbf{DrProbe}~[2] to simulate the HRTEM images associated with the nanoalloy dataset.
-        
-        \vspace{1.4cm}
+        Synthetic HRTEM images generated with \textbf{DrProbe}~[2] from the nanoalloy configurations.
+
+        \vspace{0.8cm}
 
         \begin{center}
             \begin{tikzpicture}
@@ -74,34 +68,43 @@
     \end{minipage}
     \hfill
     \begin{minipage}[t]{0.48\linewidth}
-        
-        \vspace{0.5cm}
-        
-        \textbf{\underline{Distribution of the core-shell index}}
-        
-        \vspace{0.5cm}
-        
-        The \textbf{core-shell index} $\eta$ is used to characterize the structure of the nanoalloys.
-        
-        \vspace{0.05cm}
+
+        \vspace{0.3cm}
+
+        \textbf{\underline{Core-shell index $\eta$}}
+
+        \vspace{0.3cm}
+
+        Quantifies the degree of segregation in nanoalloys:
+
+        \vspace{0.2cm}
 
         \begin{equation}
-            \eta = 2\left| \frac{n^{out}_{Ag}}{n^{out}_{Ag} + n^{out}_{Co}} - \frac{n_{Ag}}{n_{tot}}\right| + 2\left| \frac{n^{in}_{Ag}}{n^{in}_{Ag} + n^{in}_{Co}} - \frac{n_{Ag}}{n_{tot}}\right| - \frac{d_{com}}{2r_{g}}
+            \eta = \textcolor{approachOne}{2\left| \frac{n^{out}_{Ag}}{n^{out}_{Ag} + n^{out}_{Co}} - \frac{n_{Ag}}{n_{tot}}\right| + 2\left| \frac{n^{in}_{Ag}}{n^{in}_{Ag} + n^{in}_{Co}} - \frac{n_{Ag}}{n_{tot}}\right|} - \textcolor{termThree}{\frac{d_{com}}{2r_{g}}}
         \end{equation}
-        
-        \vspace{0.05cm}
 
-        The first two terms measure how much the \textbf{\textcolor{colorAg}{Ag} concentration} in the \textbf{outer} and \textbf{inner} regions deviates from the overall composition of the particle.
-        Here, $n^{out}_{Ag}$ and $n^{out}_{Co}$ denote the numbers of \textcolor{colorAg}{Ag} and \textcolor{colorCo}{Co} atoms in the \textbf{outer shell}, while $n^{in}_{Ag}$ and $n^{in}_{Co}$ refer to the \textbf{inner region}.
-        The last term accounts for the distance $d_{com}$ between the centers of mass of the two species, normalized by the radius of gyration $r_g$.
-        Taken together, these quantities can be used to quantify the degree of \textbf{core-shell} or \textbf{Janus} character of the nanoalloys, with larger $\eta$ values indicating a strong core-shell structure and smaller or negative values corresponding to a more mixed configuration.
+        \vspace{0.3cm}
 
-        \vspace{0.4cm}
+        \begin{center}
+            \begin{tikzpicture}[x=\linewidth, y=1cm,
+                ibox/.style={rounded corners=4pt, minimum height=1.2cm, text width=0.85\linewidth, align=left, inner sep=8pt}]
+
+                \node[ibox, fill=approachOne!12] at (0.45, 4.5) {
+                    \textbf{Terms 1 \& 2:} deviation of \textcolor{colorAg}{\textbf{Ag}} concentration in outer/inner regions from overall composition
+                };
+                \node[ibox, fill=termThree!12] at (0.45, 2.5) {
+                    \textbf{Term 3:} distance between centers of mass of the two species, normalized by $r_g$
+                };
+                \node[ibox, fill=approachThree!12] at (0.45, 0.5) {
+                    $\eta \uparrow$ $\rightarrow$ \textbf{core--shell} \quad\quad $\eta \downarrow$ $\rightarrow$ \textbf{mixed / Janus}
+                };
+            \end{tikzpicture}
+        \end{center}
 
         \begin{center}
             \begin{tikzpicture}
                 \node[anchor=center] (image) at (0,0) {
-                    \includegraphics[width=0.55\linewidth]{Figure/distribution.png}
+                    \includegraphics[width=0.45\linewidth]{Figure/distribution.png}
                 };
             \end{tikzpicture}
         \end{center}

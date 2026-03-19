@@ -1,28 +1,45 @@
 \vspace*{1.5mm}
 \block{\strut 1. Scientific context, motivation, and approach}{
-        
+
+        \vspace{0.3cm}
+
+        \textbf{High-resolution transmission electron microscopy (HRTEM)} provides direct access to the structure and morphology of nanoalloys, but image interpretation remains \textbf{challenging and expert-dependent}.
+        \textbf{Deep learning} can accelerate this analysis --- provided a \textbf{large, representative dataset} is available.
+        We generate such a dataset from \textbf{molecular dynamics} snapshots and synthetic HRTEM images produced via the \textbf{multislice} method.
+
+        \vspace{0.6cm}
+
+        \textbf{The \textcolor{colorAg}{Ag}--\textcolor{colorCo}{Co} system:} an immiscible nanoalloy:\\
+        \textcolor{colorAg}{\textbf{Ag}} $\rightarrow$ \textbf{surface} (lower surface energy, larger atoms), \\
+        \textcolor{colorCo}{\textbf{Co}} $\rightarrow$ \textbf{core}.\\
+        Metastable conformations possible depending on synthesis conditions:
+
         \vspace{0.5cm}
 
-        Electron microscopy makes it possible to study structures far smaller than the wavelength of visible light.
-        In nanoparticle research, \textbf{high-resolution transmission electron microscopy (HRTEM)} provides direct access to the \textbf{structure and morphology of nanoalloys}.
-        However, interpreting HRTEM images remains \textbf{challenging, time-consuming, and highly expert-dependent}.
-        \textbf{Deep learning} offers a promising route to accelerate and simplify this analysis while extracting information on the \textbf{structure and properties} of nanoalloys.
-        Training such models, however, requires a \textbf{large and representative dataset}.
-        Here, we generate this dataset from snapshots extracted from \textbf{molecular dynamics} simulations and from synthetic HRTEM images produced using the \textbf{multislice} method.
-        
-        \vspace{1cm}
-        
-        We focus here on the \textcolor{colorAg}{\textbf{Ag}}--\textcolor{colorCo}{\textbf{Co}} system, a well-known \textbf{immiscible nanoalloy}.
-        In these particles, \textcolor{colorAg}{\textbf{Ag}} atoms preferentially segregate to the \textbf{surface}, whereas \textcolor{colorCo}{\textbf{Co}} atoms tend to occupy the \textbf{core}.
-        This behavior is expected because \textcolor{colorAg}{\textbf{Ag}} has a lower surface energy than \textcolor{colorCo}{\textbf{Co}}, and \textcolor{colorAg}{\textbf{Ag}} atoms are also larger.
-        Depending on the synthesis conditions, however, these nanoalloys may adopt \textbf{metastable conformations}, ranging from \textbf{core--shell} and \textbf{Janus} structures to \textbf{partially mixed} configurations.
-        This system therefore provides an ideal benchmark to test whether \textbf{deep learning} can reliably extract structural information from HRTEM images.
+        \begin{center}
+            \begin{tikzpicture}[x=\linewidth, y=1cm]
+                \node[inner sep=0] (img1) at (0.17,4.5) {
+                    \includegraphics[height=8cm]{Figure/cs.png}
+                };
+                \node[font=\small\bfseries] at (0.17,0.0) {Core--shell};
 
-        \vspace{1.1cm}
+                \node[inner sep=0] (img2) at (0.50,4.5) {
+                    \includegraphics[height=8cm]{Figure/janus.png}
+                };
+                \node[font=\small\bfseries] at (0.50,0.0) {Janus};
+
+                \node[inner sep=0] (img3) at (0.83,4.5) {
+                    \includegraphics[height=8cm]{Figure/random.png}
+                };
+                \node[font=\small\bfseries] at (0.83,0.0) {Mixed};
+            \end{tikzpicture}
+        \end{center}
+
+        \vspace{0.6cm}
 
         \textbf{\underline{Workflow overview}}
 
-        \vspace{0.7cm}
+        \vspace{0.5cm}
 
         \begin{center}
             \begin{tikzpicture}[x=\linewidth,y=9cm]
@@ -35,9 +52,5 @@
                 \node[align=left, text width=0.18\linewidth, font=\bfseries] at (0.79,0.52) {Train and apply\\deep-learning\\models};
             \end{tikzpicture}
         \end{center}
-
-        \vspace{0.5cm}
-
-        \textbf{MD simulations + multislice image generation + deep learning} provide a direct route from \textbf{synthetic data} to the interpretation of \textbf{experimental HRTEM images}.
 
 }

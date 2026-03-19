@@ -1,73 +1,62 @@
 \block{\strut 2. Molecular dynamics (MD)} {
-        
-    \vspace{0.4cm}
+
+    \vspace{0.3cm}
+
+    We simulate the \textbf{condensation} of \textcolor{colorAg}{\textbf{Ag}}--\textcolor{colorCo}{\textbf{Co}} vapor into nanoalloys using \textbf{variable simulation parameters} to generate a diverse set of configurations.
+
+    \vspace{0.3cm}
 
     \begin{center}
         \begin{tikzpicture}
-            % Image 1 (nœud "image1")
             \node[anchor=west, inner sep=0] (image1) at (0,0) {
                 \includegraphics[width=0.2\linewidth]{Figure/MD/md_init.png}
             };
 
-            % Image 2 (nœud "image2") à droite de l'image 1
             \node[anchor=west, inner sep=0, xshift=0.3\linewidth] (image2) at (0,0) {
                \includegraphics[width=0.18\linewidth]{Figure/MD/md_final.png}
             };
 
-            % Légendes sous les images (optionnel)
             \node[anchor=north, align=center] at (image1.south) {\small{Initial configuration}};
             \node[anchor=north, align=center] at (image2.south) {\small{Final configuration}};
 
-            % Flèche entre les deux images
             \draw[->, thick] (image1.east) -- (image2.west);
         \end{tikzpicture}
     \end{center}
 
-
+    \vspace{0.3cm}
 
     \textbf{\underline{Simulation protocol}}
 
-    \vspace{0.4cm}
+    \vspace{0.3cm}
 
-    \begin{itemize}
-        
-        \item \textbf{Number of atoms:} 10 to 5000 ;
-    
-        \vspace{0.25cm}
-    
-        \item \textbf{Simulation time:} 0.5 to 5 ns ;
-            
-        \vspace{0.25cm}
-    
-        \item \textbf{Composition:} 0\% to 100\% \textcolor{colorAg}{\textbf{Ag}} atoms, the remainder being \textcolor{colorCo}{\textbf{Co}} ;
+    \begin{center}
+        \begin{tikzpicture}[x=\linewidth, y=1cm,
+            parambox/.style={rounded corners=4pt, minimum height=1.4cm, text width=0.38\linewidth, align=center, font=\small}]
 
-        \vspace{0.25cm}
+            % Row 1
+            \node[parambox, fill=approachOne!15] at (0.15, 3.8) {\textbf{Atoms:} 10 -- 5\,000};
+            \node[parambox, fill=approachTwo!15] at (0.55, 3.8) {\textbf{Time:} 0.5 -- 5\,ns};
 
-        \item \textbf{Initial temperature:} 1500 to 2500 K ;
+            % Row 2
+            \node[parambox, fill=approachThree!15] at (0.15, 2.0) {\textbf{Composition:} 0--100\% \textcolor{colorAg}{\textbf{Ag}}};
+            \node[parambox, fill=approachOne!15] at (0.55, 2.0) {\textbf{$T_\text{init}$:} 1\,500 -- 2\,500\,K $\rightarrow$ \textbf{$T_\text{final}$:} 300\,K};
 
-        \vspace{0.25cm}
+        \end{tikzpicture}
+    \end{center}
 
-        \item \textbf{Final temperature:} 300 K ;
+    \vspace{0.3cm}
 
-        \vspace{0.25cm}
+    \textbf{Thermostat:} Nos\'e--Hoover, linear cooling \quad
+    $T(t) = \dfrac{T_{\text{final}} - T_\text{initial}}{t_{\text{final}}}t + T_\text{initial}$
 
-        \item \textbf{Canonical ensemble:} Nos\'e--Hoover thermostat with a linear temperature decrease
-                
-        \vspace{0.5cm}
-            
-        \begin{equation}
-            T(t) = \frac{T_{\text{final}} - T_\text{initial}}{t_{\text{final}}}t + T_\text{initial}
-        \end{equation}            
+    \vspace{0.5cm}
 
-        \vspace{1cm}
+    \textbf{Potential:} TBSMA (Tight-Binding Second Moment Approximation)~[1]
 
-        \item \textbf{Interatomic potential:} \textbf{TBSMA} (Tight-Binding Second Moment Approximation)~[1]
-                
-        \vspace{0.5cm}
-            
-        \begin{equation}
-            \mathcal{U} = \sum^N_{i=1} \left[\sum_{j\ne i}^NAe^{-p(r_{ij}/r_0 - 1)} -\sqrt{\sum_{j\ne i}^N\xi^2e^{-2q(r_{ij}/r_0 - 1)}}~\right]
-        \end{equation}
-    \end{itemize}
+    \vspace{0.2cm}
+
+    \begin{equation}
+        \mathcal{U} = \sum^N_{i=1} \left[\sum_{j\ne i}^NAe^{-p(r_{ij}/r_0 - 1)} -\sqrt{\sum_{j\ne i}^N\xi^2e^{-2q(r_{ij}/r_0 - 1)}}~\right]
+    \end{equation}
 
 }
