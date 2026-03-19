@@ -1,23 +1,56 @@
 \vspace*{1.5mm}
-\block{\strut Introduction}{
-        
+\block{\strut 1. Scientific context, motivation, and approach}{
+
+        \vspace{0.3cm}
+
+        \textbf{High-resolution transmission electron microscopy (HRTEM)} provides direct access to the structure and morphology of nanoalloys, but image interpretation remains \textbf{challenging and expert-dependent}.
+        \textbf{Deep learning} can accelerate this analysis --- provided a \textbf{large, representative dataset} is available.
+        We generate such a dataset from \textbf{molecular dynamics} snapshots and synthetic HRTEM images produced via the \textbf{multislice} method.
+
+        \vspace{0.6cm}
+
+        \textbf{The \textcolor{colorAg}{Ag}--\textcolor{colorCo}{Co} system:} an immiscible nanoalloy:\\
+        \textcolor{colorAg}{\textbf{Ag}} $\rightarrow$ \textbf{surface} (lower surface energy, larger atoms), \\
+        \textcolor{colorCo}{\textbf{Co}} $\rightarrow$ \textbf{core}.\\
+        Metastable conformations possible depending on synthesis conditions:
+
         \vspace{0.5cm}
 
-        Electron microscopy allows us to study the structure of objects much smaller than the wavelength of visible light.
-        In the field of nanoparticles, high-resolution transmission electron microscopy (HRTEM) enables us to investigate the structure and geometry of nanoalloys.
-        However, analyzing HRTEM ima!ges can be time-consuming and challenging.
-        It needs a lot of expertise and experience in the imaging field to analyze them correctly.
-        The use of deep learning can be an option to accelerate and simplify the analysis of these HRTEM images and exctract information about the structure and properties of nanoalloys.
-        But for this, a dataset is needed to train the deep learning models.
-        This dataset is generated using a molecular dynamics code developed in the laboratory.
-        
-        \vspace{2cm}
-        
-        To start this PhD project, we focus on the \textcolor{colorAg}{\textbf{Ag}}–\textcolor{colorCo}{\textbf{Co}} system, an immiscible alloy where the structure is known.
-        In this system, \textcolor{colorAg}{\textbf{Ag}} atoms preferentially segregate to the surface while \textcolor{colorCo}{\textbf{Co}} atoms tend to form the core, consistent with their lower and higher surface energies, respectively.
-        The objective with this system is to check if the deep learning models can learn and extract the same information from the HRTEM images.
-        Once this objective is done, other systems with more complex structures that we don't know yet will be studied to extract new information about their structure and properties.
+        \begin{center}
+            \begin{tikzpicture}[x=\linewidth, y=1cm]
+                \node[inner sep=0] (img1) at (0.17,4.5) {
+                    \includegraphics[height=8cm]{Figure/cs.png}
+                };
+                \node[font=\small\bfseries] at (0.17,0.0) {Core--shell};
 
-        \vspace{3cm}
+                \node[inner sep=0] (img2) at (0.50,4.5) {
+                    \includegraphics[height=8cm]{Figure/janus.png}
+                };
+                \node[font=\small\bfseries] at (0.50,0.0) {Janus};
+
+                \node[inner sep=0] (img3) at (0.83,4.5) {
+                    \includegraphics[height=8cm]{Figure/random.png}
+                };
+                \node[font=\small\bfseries] at (0.83,0.0) {Mixed};
+            \end{tikzpicture}
+        \end{center}
+
+        \vspace{0.6cm}
+
+        \textbf{\underline{Workflow overview}}
+
+        \vspace{0.5cm}
+
+        \begin{center}
+            \begin{tikzpicture}[x=\linewidth,y=9cm]
+                \fill[approachOne] (0.00,0.04) -- (0.24,0.04) -- (0.32,0.50) -- (0.24,0.96) -- (0.00,0.96) -- cycle;
+                \fill[approachTwo] (0.29,0.04) -- (0.55,0.04) -- (0.63,0.50) -- (0.55,0.96) -- (0.29,0.96) -- (0.37,0.50) -- cycle;
+                \fill[approachThree] (0.60,0.04) -- (0.88,0.04) -- (0.96,0.50) -- (0.88,0.96) -- (0.60,0.96) -- (0.68,0.50) -- cycle;
+
+                \node[align=left, text width=0.17\linewidth, font=\bfseries] at (0.13,0.52) {Generate\\nanoalloy\\configurations};
+                \node[align=left, text width=0.18\linewidth, font=\bfseries] at (0.46,0.52) {Simulate HRTEM\\images and\\extract structural\\parameters};
+                \node[align=left, text width=0.18\linewidth, font=\bfseries] at (0.79,0.52) {Train and apply\\deep-learning\\models};
+            \end{tikzpicture}
+        \end{center}
 
 }

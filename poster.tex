@@ -1,4 +1,4 @@
-\documentclass[24pt,a0paper,portrait]{tikzposter}
+\documentclass[20pt,a0paper,portrait]{tikzposter}
 
 \input{config}
 \title{
@@ -11,7 +11,7 @@
 \end{minipage}
 \begin{minipage}[c]{0.56\linewidth}
 \centering
-\textbf{Deep learning analysis of nanoalloys from HRTEM images}
+\textbf{Towards deep learning analysis of nanoalloys from HRTEM images}
 \end{minipage}
 \begin{minipage}[c]{0.22\linewidth}
 \raggedleft
@@ -30,15 +30,22 @@ $^*$victor.barrere@cnrs-orleans.fr}
 \maketitle
 
 \begin{columns}[t]
-    \column{0.4}
+    \column{0.55}
     \vspace*{0cm}
     \input{intro}
-    \column{0.6}
+    \column{0.45}
     \vspace*{0cm}
     \input{md}
 \end{columns}
 \input{data}
 \input{deep_learning}
-\input{outlook}
+\begin{columns}[t]
+    \column{0.65}
+    \vspace*{0cm}
+    \input{outlook}
+    \column{0.35}
+    \vspace*{0cm}
+    \input{references}
+\end{columns}
 
 \end{document}
