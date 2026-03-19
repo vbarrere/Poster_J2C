@@ -1,26 +1,43 @@
 \vspace*{1.5mm}
-\block{\strut Introduction}{
+\block{\strut 1. Scientific context, motivation, and approach}{
         
         \vspace{0.5cm}
 
-        Electron microscopy allows us to study the structure of objects much smaller than the wavelength of visible light.
-        In the field of nanoparticles, \textbf{high-resolution transmission electron microscopy (HRTEM)} enables us to investigate the \textbf{structure and geometry of nanoalloys}.
-        However, analyzing HRTEM images can be time-consuming and challenging.
-        It needs a lot of expertise and experience in the imaging field to analyze them correctly.
-        The use of deep learning can be an option to accelerate and simplify the analysis of these HRTEM images and exctract information about the structure and properties of nanoalloys.
-        For the training of the \textbf{deep learning} models, a comprehensive dataset is needed.
-        We generate this dataset using a snapshots extracted from \textbf{molecular dynamics} simulations coupled to the generation of synthetic HRTEM images using the multi-slice technique.
+        Electron microscopy makes it possible to study structures far smaller than the wavelength of visible light.
+        In nanoparticle research, \textbf{high-resolution transmission electron microscopy (HRTEM)} provides direct access to the \textbf{structure and morphology of nanoalloys}.
+        However, interpreting HRTEM images remains \textbf{challenging, time-consuming, and highly expert-dependent}.
+        \textbf{Deep learning} offers a promising route to accelerate and simplify this analysis while extracting information on the \textbf{structure and properties} of nanoalloys.
+        Training such models, however, requires a \textbf{large and representative dataset}.
+        Here, we generate this dataset from snapshots extracted from \textbf{molecular dynamics} simulations and from synthetic HRTEM images produced using the \textbf{multislice} method.
         
-        \vspace{2cm}
+        \vspace{1cm}
         
-        We focus here on the \textcolor{colorAg}{\textbf{Ag}}–\textcolor{colorCo}{\textbf{Co}} system, an immiscible alloy with a known structure.
-        In this system, \textcolor{colorAg}{\textbf{Ag}} atoms preferentially segregate to the surface while \textcolor{colorCo}{\textbf{Co}} atoms tend to form the core. This is expected as \textcolor{colorAg}{\textbf{Ag}} has a lower surface energy when compared to \textcolor{colorCo}{\textbf{Co}} and additionally \textcolor{colorAg}{\textbf{Ag}} atoms are larger.
-        Yet, depending on the synthesis conditions, the structure of these nanoalloys varies and can be found in metastable conformations, ranging from core-shell to Janus or even partially mixed structures.
-        The use of deep learning models can help us to extract information about their structure and properties.
+        We focus here on the \textcolor{colorAg}{\textbf{Ag}}--\textcolor{colorCo}{\textbf{Co}} system, a well-known \textbf{immiscible nanoalloy}.
+        In these particles, \textcolor{colorAg}{\textbf{Ag}} atoms preferentially segregate to the \textbf{surface}, whereas \textcolor{colorCo}{\textbf{Co}} atoms tend to occupy the \textbf{core}.
+        This behavior is expected because \textcolor{colorAg}{\textbf{Ag}} has a lower surface energy than \textcolor{colorCo}{\textbf{Co}}, and \textcolor{colorAg}{\textbf{Ag}} atoms are also larger.
+        Depending on the synthesis conditions, however, these nanoalloys may adopt \textbf{metastable conformations}, ranging from \textbf{core--shell} and \textbf{Janus} structures to \textbf{partially mixed} configurations.
+        This system therefore provides an ideal benchmark to test whether \textbf{deep learning} can reliably extract structural information from HRTEM images.
 
-        %        The objective with this system is to check if the deep learning models can learn and extract the same information from the HRTEM images.
-%        Once this objective is done, other systems with more complex structures that we don't know yet will be studied to extract new information about their structure and properties.
+        \vspace{1.1cm}
 
-        \vspace{3cm}
+        \textbf{\underline{Workflow overview}}
+
+        \vspace{0.7cm}
+
+        \begin{center}
+            \begin{tikzpicture}[x=\linewidth,y=9cm]
+                \fill[approachOne] (0.00,0.04) -- (0.24,0.04) -- (0.32,0.50) -- (0.24,0.96) -- (0.00,0.96) -- cycle;
+                \fill[approachTwo] (0.29,0.04) -- (0.55,0.04) -- (0.63,0.50) -- (0.55,0.96) -- (0.29,0.96) -- (0.37,0.50) -- cycle;
+                \fill[approachThree] (0.60,0.04) -- (0.88,0.04) -- (0.96,0.50) -- (0.88,0.96) -- (0.60,0.96) -- (0.68,0.50) -- cycle;
+
+                \node[align=left, text width=0.17\linewidth, font=\bfseries] at (0.13,0.52) {Generate\\nanoalloy\\configurations};
+                \node[align=left, text width=0.18\linewidth, font=\bfseries] at (0.46,0.52) {Simulate HRTEM\\images and\\extract structural\\parameters};
+                \node[align=left, text width=0.18\linewidth, font=\bfseries] at (0.79,0.52) {Train and apply\\deep-learning\\models};
+            \end{tikzpicture}
+        \end{center}
+
+        \vspace{0.5cm}
+
+        \textbf{MD simulations + multislice image generation + deep learning} provide a direct route from \textbf{synthetic data} to the interpretation of \textbf{experimental HRTEM images}.
 
 }
