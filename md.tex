@@ -1,10 +1,13 @@
+{
+\colorlet{framecolor}{red!70!black}
+\colorlet{blocktitlebgcolor}{red!70!black}
+\colorlet{blocktitlefgcolor}{white}
 \block{\strut 2. Molecular dynamics (MD)} {
-
     \vspace{0.3cm}
 
     We simulate the \textbf{condensation} of \textcolor{colorAg}{\textbf{Ag}}--\textcolor{colorCo}{\textbf{Co}} vapor into nanoalloys using \textbf{variable simulation parameters} to generate a diverse set of configurations.
 
-    \vspace{0.3cm}
+    \vspace{1cm}
 
     \begin{center}
         \begin{tikzpicture}
@@ -23,7 +26,7 @@
         \end{tikzpicture}
     \end{center}
 
-    \vspace{0.3cm}
+    \vspace{1cm}
 
     \textbf{\underline{Simulation protocol}}
 
@@ -39,12 +42,12 @@
 
             % Row 2
             \node[parambox, fill=approachThree!15] at (0.15, 2.0) {\textbf{Composition:} 0--100\% \textcolor{colorAg}{\textbf{Ag}}};
-            \node[parambox, fill=approachOne!15] at (0.55, 2.0) {\textbf{$T_\text{init}$:} 1\,500 -- 2\,500\,K $\rightarrow$ \textbf{$T_\text{final}$:} 300\,K};
+            \node[parambox, fill=termThree!15] at (0.55, 2.0) {\textbf{$T_\text{init}$:} 1\,500 -- 2\,500\,K $\rightarrow$ \textbf{$T_\text{final}$:} 300\,K};
 
         \end{tikzpicture}
     \end{center}
 
-    \vspace{0.3cm}
+    \vspace{0.5cm}
 
     \textbf{Thermostat:} Nos\'e--Hoover, linear cooling \quad
     $T(t) = \dfrac{T_{\text{final}} - T_\text{initial}}{t_{\text{final}}}t + T_\text{initial}$
@@ -53,10 +56,12 @@
 
     \textbf{Potential:} TBSMA (Tight-Binding Second Moment Approximation)~[1]
 
-    \vspace{0.2cm}
+    \vspace{0.5cm}
 
     \begin{equation}
         \mathcal{U} = \sum^N_{i=1} \left[\sum_{j\ne i}^NAe^{-p(r_{ij}/r_0 - 1)} -\sqrt{\sum_{j\ne i}^N\xi^2e^{-2q(r_{ij}/r_0 - 1)}}~\right]
     \end{equation}
-
+    
+    \vspace{1.3cm}
+}
 }
